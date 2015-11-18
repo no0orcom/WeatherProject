@@ -10,7 +10,7 @@ import org.w3c.dom.Document;
 public class WeatherProject { 
 public static void main(String[] args) throws IOException { 
 Display disp = new Display();
-System.out.println("Enter 1 for Riyadh, 2 for Makkah , 3 for Jeddah ");
+System.out.println("Enter 1 for Riyadh, 2 for Makkah , 3 for Jeddah , 4 for Daammam , 5 for Tabouk : ");
 Scanner in = new Scanner(System.in);
 int x;
  
@@ -25,6 +25,15 @@ switch(x){
              case 3:
  doc = generateXML("1939873");
             disp.getConditions(doc);break;
+         case 4:
+
+    doc = generateXML("1939574");
+            disp.getConditions(doc);break;
+    case 5:
+ doc = generateXML("1939987");
+            disp.getConditions(doc);break;
+         default: System.out.println("Invalid number");
+                   
 
 }
  } 
