@@ -24,7 +24,6 @@ public class KSA_Weather_Homepage extends javax.swing.JFrame {
 
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         JawfLabel = new javax.swing.JLabel();
