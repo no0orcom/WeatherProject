@@ -1,0 +1,503 @@
+package com.teknikindustries.yahooweather;
+
+import org.w3c.dom.Document;
+
+public class WeatherDisplay {
+
+    public static String city;
+    public static String country;
+    public static String temperature;
+    public static String condition;
+    public static String humidity;
+    public static String visibility;
+    public static String pressure;
+    public static String rising;
+    public static String sunrise;
+    public static String sunset;
+    public static String chill;
+    public static String direction;
+    public static String speed;
+    public static String tempUnit;
+    public static String distanceUnit;
+    public static String pressureUnit;
+    public static String speedUnit;
+
+    public WeatherDisplay() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: aload_0
+         * 1: invokespecial java/lang/Object."<init>":()V
+         * 4: return
+         *  */
+        // </editor-fold>
+    }
+
+    public void getConditions(Document doc) {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: aload_1
+         * 1: invokeinterface org/w3c/dom/Document.getDocumentElement:()Lorg/w3c/dom/Element;
+         * 6: invokeinterface org/w3c/dom/Element.normalize:()V
+         * 11: aload_1
+         * 12: ldc           rss
+         * 14: invokeinterface org/w3c/dom/Document.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 19: astore_2
+         * 20: iconst_0
+         * 21: istore_3
+         * 22: iload_3
+         * 23: aload_2
+         * 24: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 29: if_icmpge     864
+         * 32: aload_2
+         * 33: iload_3
+         * 34: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 39: astore        4
+         * 41: aload         4
+         * 43: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 48: iconst_1
+         * 49: if_icmpne     858
+         * 52: aload         4
+         * 54: checkcast     org/w3c/dom/Element
+         * 57: astore        5
+         * 59: aload         5
+         * 61: ldc           yweather:location
+         * 63: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 68: astore        6
+         * 70: iconst_0
+         * 71: istore        7
+         * 73: iload         7
+         * 75: aload         6
+         * 77: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 82: if_icmpge     162
+         * 85: aload         6
+         * 87: iload         7
+         * 89: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 94: astore        8
+         * 96: aload         4
+         * 98: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 103: iconst_1
+         * 104: if_icmpne     126
+         * 107: aload         8
+         * 109: checkcast     org/w3c/dom/Element
+         * 112: astore        9
+         * 114: aload         9
+         * 116: ldc           city
+         * 118: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 123: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.city:Ljava/lang/String;
+         * 126: aload         4
+         * 128: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 133: iconst_1
+         * 134: if_icmpne     156
+         * 137: aload         8
+         * 139: checkcast     org/w3c/dom/Element
+         * 142: astore        9
+         * 144: aload         9
+         * 146: ldc           country
+         * 148: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 153: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.country:Ljava/lang/String;
+         * 156: iinc          7, 1
+         * 159: goto          73
+         * 162: aload         5
+         * 164: ldc           yweather:units
+         * 166: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 171: astore        7
+         * 173: iconst_0
+         * 174: istore        8
+         * 176: iload         8
+         * 178: aload         7
+         * 180: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 185: if_icmpge     325
+         * 188: aload         7
+         * 190: iload         8
+         * 192: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 197: astore        9
+         * 199: aload         4
+         * 201: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 206: iconst_1
+         * 207: if_icmpne     229
+         * 210: aload         9
+         * 212: checkcast     org/w3c/dom/Element
+         * 215: astore        10
+         * 217: aload         10
+         * 219: ldc           temperature
+         * 221: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 226: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.tempUnit:Ljava/lang/String;
+         * 229: aload         4
+         * 231: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 236: iconst_1
+         * 237: if_icmpne     259
+         * 240: aload         9
+         * 242: checkcast     org/w3c/dom/Element
+         * 245: astore        10
+         * 247: aload         10
+         * 249: ldc           distance
+         * 251: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 256: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.distanceUnit:Ljava/lang/String;
+         * 259: aload         4
+         * 261: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 266: iconst_1
+         * 267: if_icmpne     289
+         * 270: aload         9
+         * 272: checkcast     org/w3c/dom/Element
+         * 275: astore        10
+         * 277: aload         10
+         * 279: ldc           pressure
+         * 281: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 286: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.pressureUnit:Ljava/lang/String;
+         * 289: aload         4
+         * 291: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 296: iconst_1
+         * 297: if_icmpne     319
+         * 300: aload         9
+         * 302: checkcast     org/w3c/dom/Element
+         * 305: astore        10
+         * 307: aload         10
+         * 309: ldc           speed
+         * 311: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 316: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.speedUnit:Ljava/lang/String;
+         * 319: iinc          8, 1
+         * 322: goto          176
+         * 325: aload         5
+         * 327: ldc           yweather:condition
+         * 329: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 334: astore        8
+         * 336: iconst_0
+         * 337: istore        9
+         * 339: iload         9
+         * 341: aload         8
+         * 343: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 348: if_icmpge     428
+         * 351: aload         8
+         * 353: iload         9
+         * 355: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 360: astore        10
+         * 362: aload         4
+         * 364: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 369: iconst_1
+         * 370: if_icmpne     392
+         * 373: aload         10
+         * 375: checkcast     org/w3c/dom/Element
+         * 378: astore        11
+         * 380: aload         11
+         * 382: ldc           temp
+         * 384: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 389: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.temperature:Ljava/lang/String;
+         * 392: aload         4
+         * 394: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 399: iconst_1
+         * 400: if_icmpne     422
+         * 403: aload         10
+         * 405: checkcast     org/w3c/dom/Element
+         * 408: astore        11
+         * 410: aload         11
+         * 412: ldc           text
+         * 414: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 419: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.condition:Ljava/lang/String;
+         * 422: iinc          9, 1
+         * 425: goto          339
+         * 428: aload         5
+         * 430: ldc           yweather:atmosphere
+         * 432: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 437: astore        9
+         * 439: iconst_0
+         * 440: istore        10
+         * 442: iload         10
+         * 444: aload         9
+         * 446: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 451: if_icmpge     591
+         * 454: aload         9
+         * 456: iload         10
+         * 458: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 463: astore        11
+         * 465: aload         4
+         * 467: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 472: iconst_1
+         * 473: if_icmpne     495
+         * 476: aload         11
+         * 478: checkcast     org/w3c/dom/Element
+         * 481: astore        12
+         * 483: aload         12
+         * 485: ldc           humidity
+         * 487: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 492: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.humidity:Ljava/lang/String;
+         * 495: aload         4
+         * 497: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 502: iconst_1
+         * 503: if_icmpne     525
+         * 506: aload         11
+         * 508: checkcast     org/w3c/dom/Element
+         * 511: astore        12
+         * 513: aload         12
+         * 515: ldc           visibility
+         * 517: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 522: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.visibility:Ljava/lang/String;
+         * 525: aload         4
+         * 527: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 532: iconst_1
+         * 533: if_icmpne     555
+         * 536: aload         11
+         * 538: checkcast     org/w3c/dom/Element
+         * 541: astore        12
+         * 543: aload         12
+         * 545: ldc           pressure
+         * 547: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 552: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.pressure:Ljava/lang/String;
+         * 555: aload         4
+         * 557: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 562: iconst_1
+         * 563: if_icmpne     585
+         * 566: aload         11
+         * 568: checkcast     org/w3c/dom/Element
+         * 571: astore        12
+         * 573: aload         12
+         * 575: ldc           rising
+         * 577: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 582: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.rising:Ljava/lang/String;
+         * 585: iinc          10, 1
+         * 588: goto          442
+         * 591: aload         5
+         * 593: ldc           yweather:astronomy
+         * 595: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 600: astore        10
+         * 602: iconst_0
+         * 603: istore        11
+         * 605: iload         11
+         * 607: aload         10
+         * 609: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 614: if_icmpge     694
+         * 617: aload         10
+         * 619: iload         11
+         * 621: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 626: astore        12
+         * 628: aload         4
+         * 630: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 635: iconst_1
+         * 636: if_icmpne     658
+         * 639: aload         12
+         * 641: checkcast     org/w3c/dom/Element
+         * 644: astore        13
+         * 646: aload         13
+         * 648: ldc           sunrise
+         * 650: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 655: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.sunrise:Ljava/lang/String;
+         * 658: aload         4
+         * 660: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 665: iconst_1
+         * 666: if_icmpne     688
+         * 669: aload         12
+         * 671: checkcast     org/w3c/dom/Element
+         * 674: astore        13
+         * 676: aload         13
+         * 678: ldc           sunset
+         * 680: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 685: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.sunset:Ljava/lang/String;
+         * 688: iinc          11, 1
+         * 691: goto          605
+         * 694: aload         5
+         * 696: ldc           yweather:wind
+         * 698: invokeinterface org/w3c/dom/Element.getElementsByTagName:(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+         * 703: astore        11
+         * 705: iconst_0
+         * 706: istore        12
+         * 708: iload         12
+         * 710: aload         11
+         * 712: invokeinterface org/w3c/dom/NodeList.getLength:()I
+         * 717: if_icmpge     858
+         * 720: aload         11
+         * 722: iload         12
+         * 724: invokeinterface org/w3c/dom/NodeList.item:(I)Lorg/w3c/dom/Node;
+         * 729: astore        13
+         * 731: aload         4
+         * 733: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 738: iconst_1
+         * 739: if_icmpne     761
+         * 742: aload         13
+         * 744: checkcast     org/w3c/dom/Element
+         * 747: astore        14
+         * 749: aload         14
+         * 751: ldc           chill
+         * 753: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 758: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.chill:Ljava/lang/String;
+         * 761: aload         4
+         * 763: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 768: iconst_1
+         * 769: if_icmpne     791
+         * 772: aload         13
+         * 774: checkcast     org/w3c/dom/Element
+         * 777: astore        14
+         * 779: aload         14
+         * 781: ldc           direction
+         * 783: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 788: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.direction:Ljava/lang/String;
+         * 791: aload         4
+         * 793: invokeinterface org/w3c/dom/Node.getNodeType:()S
+         * 798: iconst_1
+         * 799: if_icmpne     852
+         * 802: aload         13
+         * 804: checkcast     org/w3c/dom/Element
+         * 807: astore        14
+         * 809: new           java/lang/StringBuilder
+         * 812: dup
+         * 813: invokespecial java/lang/StringBuilder."<init>":()V
+         * 816: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.speed:Ljava/lang/String;
+         * 819: invokevirtual java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+         * 822: aload         14
+         * 824: ldc           speed
+         * 826: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 831: invokevirtual java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+         * 834: invokevirtual java/lang/StringBuilder.toString:()Ljava/lang/String;
+         * 837: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.speed:Ljava/lang/String;
+         * 840: aload         14
+         * 842: ldc           speed
+         * 844: invokeinterface org/w3c/dom/Element.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+         * 849: putstatic     com/teknikindustries/yahooweather/WeatherDisplay.speed:Ljava/lang/String;
+         * 852: iinc          12, 1
+         * 855: goto          708
+         * 858: iinc          3, 1
+         * 861: goto          22
+         * 864: goto          872
+         * 867: astore_2
+         * 868: aload_2
+         * 869: invokevirtual java/lang/Exception.printStackTrace:()V
+         * 872: return
+         * Exception table:
+         * from    to  target type
+         * 0   864   867   Class java/lang/Exception
+         *  */
+        // </editor-fold>
+    }
+
+    public String getCity() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.city:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getCountry() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.country:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getTemperature() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.temperature:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getCondition() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.condition:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getHumidity() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.humidity:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getVisibility() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.visibility:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getPressure() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.pressure:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getRising() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.rising:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getSunrise() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.sunrise:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getSunset() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.sunset:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getWindChill() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.chill:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getWindDirection() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.direction:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getWindSpeed() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.speed:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getDistanceUnit() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.distanceUnit:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getPressureUnit() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.pressureUnit:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getTemperatureUnit() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.tempUnit:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+
+    public String getSpeedUnit() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: getstatic     com/teknikindustries/yahooweather/WeatherDisplay.speedUnit:Ljava/lang/String;
+         * 3: areturn
+         *  */
+        // </editor-fold>
+    }
+}
