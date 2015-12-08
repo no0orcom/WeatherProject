@@ -8,7 +8,6 @@ import java.util.HashSet;
 
 /**
  *
- * @author Feras
  */
 public class KSA_Weather_Homepage extends javax.swing.JFrame {
 
