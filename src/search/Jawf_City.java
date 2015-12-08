@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Feras
  */
 public class Jawf_City
 {
