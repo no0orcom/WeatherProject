@@ -21,8 +21,9 @@ public class KSA_Weather_Homepage extends javax.swing.JFrame {
     
  
 
-    
+  
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         JawfLabel = new javax.swing.JLabel();
@@ -124,19 +125,19 @@ public class KSA_Weather_Homepage extends javax.swing.JFrame {
     private void TemperatureBtn1ActionPerformed(java.awt.event.ActionEvent evt) {                                                
 
         Jawf_City  Jawf = new  Jawf_City();
-        JawfLabel.setText(Jawf.getTemperature());
+        JawfLabel.setText(Jawf.getTemperature()+ " c");
         //----------------------------------------
         Madinah_City Madinah = new Madinah_City();
-        MadinahLabel.setText(Madinah.getTemperature());
+        MadinahLabel.setText(Madinah.getTemperature() + " c");
         //----------------------------------------
        Riyad_City Riyad = new Riyad_City();
-       RiyadLabel.setText(Riyad.getTemperature());
+       RiyadLabel.setText(Riyad.getTemperature()+ " c");
         //----------------------------------------
        Sharqiyah_City Sharqiyah = new Sharqiyah_City();
-       SharqiyahLabel.setText(Sharqiyah.getTemperature());
+       SharqiyahLabel.setText(Sharqiyah.getTemperature() + " c");
         //----------------------------------------
        Najran_City Najran = new Najran_City();
-       NajranLabel.setText(Najran.getTemperature());
+       NajranLabel.setText(Najran.getTemperature()+ " c");
        //-----------------------------------------
        TitleLabel.setText("KSA Weather Forcast (Temperature)");
         
@@ -146,19 +147,19 @@ public class KSA_Weather_Homepage extends javax.swing.JFrame {
     private void HumidityBtnActionPerformed(java.awt.event.ActionEvent evt) {                                            
       
         Jawf_City  Jawf = new  Jawf_City();
-        JawfLabel.setText( Jawf.getHumidity());
+        JawfLabel.setText( Jawf.getHumidity()+ " c");
         //-------------------------------------
         Madinah_City Madinah = new Madinah_City();
-        MadinahLabel.setText(Madinah.getHumidity());
+        MadinahLabel.setText(Madinah.getHumidity()+ " c");
         //-------------------------------------
        Riyad_City Riyad = new Riyad_City();
-       RiyadLabel.setText(Riyad.getHumidity());
+       RiyadLabel.setText(Riyad.getHumidity()+ " c");
         //-------------------------------------
        Sharqiyah_City Sharqiyah = new Sharqiyah_City();
-       SharqiyahLabel.setText(Sharqiyah.getHumidity());
+       SharqiyahLabel.setText(Sharqiyah.getHumidity()+ " c");
         //----------------------------------------
        Najran_City Najran = new Najran_City();
-       NajranLabel.setText(Najran.getHumidity());
+       NajranLabel.setText(Najran.getHumidity()+ " c");
        //-----------------------------------------
        TitleLabel.setText("KSA Weather Forcast (Humidity)");
   
@@ -187,7 +188,7 @@ public class KSA_Weather_Homepage extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-   
+      
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
